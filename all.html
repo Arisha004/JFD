@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Job Listings</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #f0f0f0;
+
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #f0f0f0;
+        }
+        .job-listing {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .job {
+            background-color: #2c2c2c;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .job-title {
+            font-size: 1.5em;
+            color: #ff6f61;
+            margin: 0;
+        }
+        .job-company {
+            font-size: 1.2em;
+            color: #a0a0a0;
+        }
+        .job-location {
+            font-size: 1em;
+            color: #a0a0a0;
+        }
+        .job-description {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #f0f0f0;
+        }
+
+        .glow {
+    font-size: 3em;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    margin-top: -18px;
+    letter-spacing: 0.2em;
+    justify-content: center;
+    text-shadow: 0 0 10px #fff, 0 0 20px #a3433a, 0 0 30px #ff6f61, 0 0 40px #ff6f61, 0 0 50px #ff6f61, 0 0 60px #ff6f61, 0 0 70px #ff6f61;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="all.html">Jobs</a></li>
+            </ul>
+        </nav></div>
+        <h2 class="glow" style="margin-top: 40px;">All Job Listings</h1>
+              
+<div class="job-listing">
+    <div th:each="job : ${jobs}" class="job">
+        <h2 class="job-title" th:text="${job.title}"></h2>
+        <p class="job-company" th:text="${job.company}"></p>
+        <p class="job-location" th:text="${job.location}"></p>
+        <p class="job-description" th:text="${job.description}"></p>
+    </div>
+</div>
+<footer>
+    <p>Website made by: Arisha Mumtaz & Farheen Imam</p>
+    <p>We have made this for hackathon</p>
+</footer>
+
+
+</body>
+</html>
